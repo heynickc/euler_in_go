@@ -6,6 +6,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 	"strings"
 )
 
@@ -14,6 +15,17 @@ func main() {
 	var sNum = "90099009"
 	fmt.Println(isPalindrome(s))
 	fmt.Println(isPalindrome(sNum))
+
+	var startNum = 999
+	for i := startNum; i > 0; i-- {
+		for i := 999; i > 0; i-- {
+			if isPalindrome(strconv.FormatInt(int64(i*startNum), 10)) {
+				fmt.Println(i * startNum)
+				return
+			}
+		}
+		startNum -= 1
+	}
 }
 
 func isPalindrome(str string) bool {
