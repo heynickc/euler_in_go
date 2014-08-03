@@ -11,16 +11,19 @@ import (
 )
 
 func main() {
+	var max = 0
 	for i := 999; i > 0; i-- {
 		for n := 999; n > 0; n-- {
 			if isPalindrome(strconv.FormatInt(int64(i*n), 10)) {
-				fmt.Printf("%v * %v = %v\n", i, n, i*n)
-				return
+				if i*n > max {
+					max = i * n
+				}
 			}
 		}
 		// https://github.com/hermanschaaf/go-euler/blob/master/4.go
 		// fmt.Println(1100*i - 990*(i/10) - 99*(i/100))
 	}
+	fmt.Println(max)
 }
 
 func isPalindrome(str string) bool {
