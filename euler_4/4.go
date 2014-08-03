@@ -11,20 +11,15 @@ import (
 )
 
 func main() {
-	var s = "In girum imus nocte et consumimur igni"
-	var sNum = "90099009"
-	fmt.Println(isPalindrome(s))
-	fmt.Println(isPalindrome(sNum))
-
-	var startNum = 999
-	for i := startNum; i > 0; i-- {
-		for i := 999; i > 0; i-- {
-			if isPalindrome(strconv.FormatInt(int64(i*startNum), 10)) {
-				fmt.Println(i * startNum)
+	for i := 999; i > 0; i-- {
+		for n := 999; n > 0; n-- {
+			if isPalindrome(strconv.FormatInt(int64(i*n), 10)) {
+				fmt.Printf("%v * %v = %v\n", i, n, i*n)
 				return
 			}
 		}
-		startNum -= 1
+		// https://github.com/hermanschaaf/go-euler/blob/master/4.go
+		// fmt.Println(1100*i - 990*(i/10) - 99*(i/100))
 	}
 }
 
