@@ -10,6 +10,6 @@ func main() {
 	}
 
 	for i, num := range lowNums {
-		fmt.Printf("%v index; %v num", i, num)
+		fmt.Printf("%v index; %v num\n", i, num)
 	}
 }
