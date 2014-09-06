@@ -32,7 +32,6 @@ func main() {
 	var biggest, num int64 = 0, 0
 
 	for i, _ := range result {
-		fmt.Printf("%v, %v \n", i, string(result[i]))
 		if i > len(result)-5 {
 			fmt.Println(biggest)
 			return
@@ -41,7 +40,7 @@ func main() {
 		for u := 0; u < 5; u++ {
 			c, _ := strconv.ParseInt((string)(result[i+u]), 0, 0)
 			num *= c
-			fmt.Println(num)
+			// fmt.Println(num)
 		}
 		if num > biggest {
 			biggest = num
